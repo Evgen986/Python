@@ -1,9 +1,18 @@
-print('a', 'b', 'c', sep='*')
-print('d', 'e', 'f', sep='**', end='')
-print('g', 'h', 'i', sep='+', end='%')
-print('j', 'k', 'l', sep='-', end='\n')
-print('m', 'n', 'o', sep='/', end='!')
-print('p', 'q', 'r', sep='1', end='%')
-print('s', 't', 'u', sep='&', end='\n')
-print('v', 'w', 'x', sep='%')
-print('y', 'z', sep='/', end='!')
+for i in range(40):
+    num = i
+    print(num, ' ', end='')
+    if -1<num<37:
+        if num==0:
+            print('зеленый')
+        elif 0<num<11 or 18<num<29:
+            if num%2!=0:
+                print('красный')
+            else:
+                print('черный')
+        else:
+            if num%2!=0:
+                print('черный')
+            else:
+                print('красный')
+    else:
+        print('ошибка ввода')
