@@ -16,4 +16,4 @@ while flag:
         flag = False
     else:
         print('Введено не корректное значение ! Попробуйте еще раз!')
-print(set_sequence(n))
+print(f'{n} -> {set_sequence(n)}')

@@ -20,4 +20,4 @@ while flag:
     else:
         print('Введено не корректное значение ! Попробуйте еще раз!')
 
-print(product_numbers(n))
+print(f'{n} -> {product_numbers(n)}')

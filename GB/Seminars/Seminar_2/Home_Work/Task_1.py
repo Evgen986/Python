@@ -31,4 +31,4 @@ while flag:     # Проверка на корректность ввода че
     except ValueError:
         print('Введено некорректное значение!')
 
-print(sum_nums(num))
+print(f'{num} -> {sum_nums(num)}')
