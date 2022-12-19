@@ -2,18 +2,19 @@
 # Пример:
 # - Для n = 6: {1: 4, 2: 7, 3: 10, 4: 13, 5: 16, 6: 19}
 
-def set_sequence(num):
-    my_dict= []
-    for i in range(1, num+1):
-        my_dict.append(round((1+1/i)**i))
+def set_sequence(num_f):
+    my_dict = []
+    for i in range(1, num_f + 1):
+        my_dict.append(round((1 + 1 / i) ** i))
     return my_dict
+
 
 flag = True
 while flag:
-    n = input('Введите число N: ')
-    if n.isdigit():
-        n = int(n)
+    num = input('Введите число N: ')
+    if num.isdigit():
+        num = int(num)
         flag = False
     else:
         print('Введено не корректное значение ! Попробуйте еще раз!')
-print(f'{n} -> {set_sequence(n)}')
+print(f'{num} -> {set_sequence(num)}')
