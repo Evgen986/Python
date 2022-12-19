@@ -19,13 +19,17 @@ while flag:
 my_list = get_list(n)
 print(my_list)
 
-# Работа с файлом (открытие, присваивание переменным значений хранящихся в файле, закрытие файла)
-file = open('file.txt', 'r')
-first_index = int(file.readline())
-second_index = int(file.readline())
-third_index = int(file.readline())
-four_index = int(file.readline())
-file.close()
+# Работа с файлом проверка с исключением (открытие, присваивание переменным значений хранящихся в файле, закрытие файла)
+try:
+    file = open('file.txt', 'r')
+    first_index = int(file.readline())
+    second_index = int(file.readline())
+    third_index = int(file.readline())
+    four_index = int(file.readline())
+    file.close()
+except FileNotFoundError:
+    print('Файл не найден!')
+    exit()  # В случае обнаружения исключения прерываем выполнение программы
 
 # Перемножение данных хранящихся в листе согласно полученным индексам
 product_1 = my_list[first_index]*my_list[second_index]
