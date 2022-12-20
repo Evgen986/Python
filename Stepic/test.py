@@ -1,18 +1,11 @@
-for i in range(40):
-    num = i
-    print(num, ' ', end='')
-    if -1<num<37:
-        if num==0:
-            print('зеленый')
-        elif 0<num<11 or 18<num<29:
-            if num%2!=0:
-                print('красный')
-            else:
-                print('черный')
-        else:
-            if num%2!=0:
-                print('черный')
-            else:
-                print('красный')
-    else:
-        print('ошибка ввода')
+a1, b1, a2, b2 = int(input()), int(input()), int(input()), int(input())
+a_d = a2-a1
+b_d = b2-b1
+if a_d < 0:
+    a_d *= -1
+if b_d < 0:
+    b_d *= -1
+if (a_d == 1 and b_d == 1) or (a_d == 0 and b_d > 0 or a_d > 0 and b_d == 0) or (a_d == b_d):
+    print('YES')
+else:
+    print('NO')
