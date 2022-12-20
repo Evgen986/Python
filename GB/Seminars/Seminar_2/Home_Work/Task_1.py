@@ -3,25 +3,25 @@
 # - 6782 -> 23
 # - 0,56 -> 11
 
-def sum_nums(num):  # Функция суммирования отдельных чисел
-    symbol = num.find('.')
-    if symbol > 0:    # Если число с плавающей точкой
-        num = int(float(num)*10**(len(num)-1-symbol))
+def sum_nums(num_f):  # Функция суммирования отдельных чисел
+    symbol = num_f.find('.')
+    if symbol > 0:  # Если число с плавающей точкой
+        num_f = int(float(num_f) * 10 ** (len(num_f) - 1 - symbol))
         sum = 0
-        while num:
-            sum += num % 10
-            num //= 10
-    else:   # Иначе целочисленное значение
-        num = int(num)
+        while num_f:
+            sum += num_f % 10
+            num_f //= 10
+    else:  # Иначе целочисленное значение
+        num_f = int(num_f)
         sum = 0
-        while num:
-            sum += num % 10
-            num //= 10
+        while num_f:
+            sum += num_f % 10
+            num_f //= 10
     return sum
 
 
 flag = True
-while flag:     # Проверка на корректность ввода через исключение
+while flag:  # Проверка на корректность ввода через исключение
     num = input('Введите число: ')
     # Убираем '-' и заменяем ',' на точку '.',что бы исключить ошибку
     num = num.replace('-', '').replace(',', '.')
