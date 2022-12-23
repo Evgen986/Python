@@ -1,11 +1,7 @@
-a1, b1, a2, b2 = int(input()), int(input()), int(input()), int(input())
-a_d = a2-a1
-b_d = b2-b1
-if a_d < 0:
-    a_d *= -1
-if b_d < 0:
-    b_d *= -1
-if (a_d == 1 and b_d == 1) or (a_d == 0 and b_d > 0 or a_d > 0 and b_d == 0) or (a_d == b_d):
-    print('YES')
-else:
-    print('NO')
+num = int(input())
+n = 0
+n_1 = 1
+print(n_1, end=' ')
+for i in range(1, num):
+    n, n_1 = n_1, n + n_1
+    print(n_1, end=' ')
