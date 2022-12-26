@@ -17,18 +17,16 @@ def check_correct_input():  # Получение от пользователя �
     return int(degree_k)
 
 
-def polynomial_creation(degree):
-    coefficient = [randint(1, 100) for monomial in range(1, degree + 1)] + [randint(1, 100)]
+def polynomial_creation(degree):  # Функция создания многочлена
+    coefficient = [randint(1, 100) for monomial in range(1, degree + 2)]
     polynomial = ''
     for index in range(len(coefficient) - 1, -1, -1):
         polynomial += str(coefficient[index]) + 'x^' + str(index) + ' + '
-    print(f'До изменений {polynomial}')
     polynomial = polynomial[:-3].replace('x^0', '').replace('x^1', 'x') + ' = 0'
-    print(f'После изменений {polynomial}')
     return polynomial
 
 
-def write_to_file(name, text):
+def write_to_file(name, text):  # функция записи в файл
     file = open(str(name), 'w')
     file.write(text)
     file.close()
