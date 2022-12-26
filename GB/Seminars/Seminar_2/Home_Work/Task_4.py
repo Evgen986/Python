@@ -6,7 +6,7 @@ import random
 def get_list(num_f):  # Функция заполнения списка
     my_list_f = []
     for i in range(num_f):
-        my_list_f.append(random.randint(-num_f, num_f + 1))
+        my_list_f.append(random.randint(-num_f, num_f))
     return my_list_f
 
 
