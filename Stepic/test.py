@@ -1,13 +1,13 @@
-my_list = list()
-for i in range(int(input())):
-    my_list.append(input())
-search_list = list()
-for j in range(int(input())):
-    search_list.append(input())
-for index in range(len(my_list)):
-    count = 0
-    for ind in range(len(search_list)):
-        if search_list[ind].lower() in my_list[index].lower():
-            count += 1
-    if count == len(search_list):
-        print(my_list[index])
+#  g i v e t h h i i s m a a a n a g u u n
+text = input().replace(' ', '')
+count = int(input())
+result_list = list()
+while len(text) != 0:
+    new_list = list()
+    if count > len(text):
+        count = len(text)
+    for index in range(count):
+        new_list.append(text[index])
+    text = text[count:]
+    result_list.append(new_list)
+print(result_list)
