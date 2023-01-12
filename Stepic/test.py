@@ -1,2 +1,2 @@
-l = {25, 87, 95}
-print(len(l))
+a, *b, c = 'No bees', 'no honey'
+print(b)
