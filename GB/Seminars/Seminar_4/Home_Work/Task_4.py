@@ -17,8 +17,17 @@ def check_correct_input():  # Получение от пользователя �
     return int(degree_k)
 
 
+# def polynomial_creation(degree):  # Функция создания многочлена
+#     polynomial = [str(randint(0, 10)) + '*x^' + str(de) for de in range(degree, -1, -1)]
+#     polynomial = [el for el in polynomial if el[0] != '0']
+#     print(polynomial)
+#     polynomial = ' + '.join(polynomial)
+#     print(polynomial)
+#     polynomial = polynomial.replace('*x^0', '').replace('^1', '') + ' = 0'
+#     return polynomial
+#
 def polynomial_creation(degree):  # Функция создания многочлена
-    coefficient = [randint(1, 100) for monomial in range(1, degree + 2)]
+    coefficient = [randint(1, 100) for _ in range(1, degree + 2)]
     polynomial = ''
     for index in range(len(coefficient) - 1, -1, -1):
         polynomial += str(coefficient[index]) + 'x^' + str(index) + ' + '
