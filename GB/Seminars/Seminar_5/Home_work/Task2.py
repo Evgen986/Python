@@ -64,7 +64,8 @@ def game_people(first_p):  # Игра человек-человек
         if player_takes.isdigit() and 0 < int(player_takes) < 29 and int(player_takes) <= base:
             base = base - int(player_takes)
             if base == 0:
-                print(f'На столе не осталось конфет! Победил {players_list[player]}! Примите поздравления! Игра окончена!')
+                print(
+                    f'На столе не осталось конфет! Победил {players_list[player]}! Примите поздравления! Игра окончена!')
                 exit()
             else:
                 print(f'На столе осталось {base} конфет, ходит следующий игрок!')
@@ -94,7 +95,7 @@ def game_pc(dif, first_p):  # Игра человек-ПК
             if base < 28:
                 if dif == 1:  # Если сложность 1, то ПК будет поддаватся
                     if base != 1:  # Что-бы избежать ошибки если осталась 1 конфета
-                        pc_takes = random.randint(1, base-1)
+                        pc_takes = random.randint(1, base - 1)
                     else:
                         pc_takes = 1
                 else:
@@ -103,7 +104,7 @@ def game_pc(dif, first_p):  # Игра человек-ПК
                 print(f'Компьютер берет {pc_takes} конфет, на столе осталось {base} конфет.')
             else:
                 if dif == 3:  # Если сложность 3 ПК побеждает
-                    pc_takes = 29-int(player_takes)
+                    pc_takes = 29 - int(player_takes)
                 else:
                     pc_takes = random.randint(1, 28)
                 base = base - pc_takes
@@ -118,14 +119,11 @@ def main():
     print('Приветствуем Вас в игре!\nПравила игры:\nНа столе лежит 2021 конфета, за один ход каждый участник берет '
           'не менее одной и не более 28 конфет.\nПобеждает участник который заберет последние конфеты.')
     player = choice_player()  # Человек - True, Компьютер - False
-    print(player)
-    if not player: # Если игра против ПК
+    if not player:  # Если игра против ПК
         difficulty = selection_difficulty()  # Сложность 1-пк поддается, 2-рандом, 3-пк выигрывает
-        print(difficulty)
         first = first_player(difficulty)  # Игрок 1 - True, Игрок2(ПК) - False
-        print(first)
         game_pc(difficulty, first)
-    else:   # Если играют люди
+    else:  # Если играют люди
         game_people(first_player(0))
 
 
