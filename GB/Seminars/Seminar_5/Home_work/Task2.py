@@ -26,6 +26,7 @@ def selection_difficulty():  # Выбор уровня сложности
     while True:
         selection = input('Выберите уровень сложности!\n1. Простой\n2. Средний\n3. Сложный\nВведите цифру: ')
         if selection.isdigit() and 0 < int(selection) < 4:
+        # if selection in ('1', '2', '3')
             return int(selection)
         else:
             print('Пожалуйста убедитесь, что Вы ввели корректную цифру!')
@@ -77,7 +78,7 @@ def game_people(first_p):  # Игра человек-человек
 def game_pc(dif, first_p):  # Игра человек-ПК
     players_list = ['Компьютер', 'Игрок']
     player = first_p
-    base = 2021  # Общее кол-во конфет на столе
+    base = 107  # Общее кол-во конфет на столе
     if dif == 3:
         base = base - 20
         print(f'Компьютер берет 20 конфет, на столе осталось {base} конфет.')
@@ -92,7 +93,25 @@ def game_pc(dif, first_p):  # Игра человек-ПК
                 print('Вы можете взять не меньше одной и не более 28 конфет!')
                 continue
         else:  # Ходит ПК
-            if base < 28:
+            # while base > 28:
+            #     if dif == 3:  # Если сложность 3 ПК побеждает
+            #         pc_takes = 29 - int(player_takes)
+            #     else:
+            #         pc_takes = random.randint(1, 28)
+            #     base = base - pc_takes
+            #     print(f'Компьютер берет {pc_takes} конфет, на столе осталось {base} конфет.')
+            #
+            # if dif == 1:  # Если сложность 1, то ПК будет поддаватся
+            #     if base != 1:  # Что-бы избежать ошибки если осталась 1 конфета
+            #         pc_takes = random.randint(1, base - 1)
+            #     else:
+            #         pc_takes = 1
+            # else:
+            #     pc_takes = base
+            # base = base - pc_takes
+            # print(f'Компьютер берет {pc_takes} конфет, на столе осталось {base} конфет.')
+
+            if base < 29:
                 if dif == 1:  # Если сложность 1, то ПК будет поддаватся
                     if base != 1:  # Что-бы избежать ошибки если осталась 1 конфета
                         pc_takes = random.randint(1, base - 1)

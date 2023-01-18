@@ -4,7 +4,7 @@
 
 
 def main():
-    text = 'WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWA'
+    text = 'WWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW'
     print(f'Оригинальный текст - {text}')
     symbol = text[0]
     rle_text = list()
@@ -17,9 +17,9 @@ def main():
             counter = 1
         else:
             counter += 1
-        if index == len(text)-1:
-            rle_text.append(counter)
-            rle_text.append(symbol)
+    rle_text.append(counter)
+    rle_text.append(symbol)
+    print(rle_text)
     print('RLE = ', end='')
     print(*rle_text, sep='')
     text = ''
