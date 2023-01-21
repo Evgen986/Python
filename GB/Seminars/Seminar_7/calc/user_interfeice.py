@@ -2,13 +2,13 @@
 
 def get_nums():  # Получение данных от пользователя
     user_nums = input('Введите пример: ')
-    nums = user_nums.replace('+', ' + ')\
-        .replace('-', ' - ')\
-        .replace('*', ' * ')\
-        .replace('/', ' / ')\
-        .replace('(', '( ')\
-        .replace(')', ' )')\
-        .replace('i', 'j')\
+    nums = user_nums.replace('+', ' + ') \
+        .replace('-', ' - ') \
+        .replace('*', ' * ') \
+        .replace('/', ' / ') \
+        .replace('(', '( ') \
+        .replace(')', ' )') \
+        .replace('i', 'j') \
         .split()
     nums_list = list()
     for el in nums:
@@ -21,5 +21,5 @@ def get_nums():  # Получение данных от пользователя
     return user_nums, nums_list
 
 
-def print_user(nums, data): # Вывод данных пользователю
-    print('{}={}'.format(nums, *data))
+def print_user(nums, data):  # Вывод данных пользователю
+    print('{}={}'.format(nums, data))

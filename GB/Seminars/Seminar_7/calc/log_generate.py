@@ -2,11 +2,10 @@
 
 def write_data(data):
     data = ''.join(map(str, data))
-    with open(r'E:\УЧЕБА\Python\GB\Seminars\Seminar_7\calc\log.xml', 'a') as file:
-        file.write(data + '=')
+    with open('log.xml', 'a', encoding='utf=8') as file:
+        file.write(data + '\n')
 
 
-def write_result(result):
-    result = ''.join(map(str, result))
-    with open(r'E:\УЧЕБА\Python\GB\Seminars\Seminar_7\calc\log.xml', 'a') as file:
-        file.write(result + '\n')
+def read_log():
+    with open('log.xml', encoding='utf=8') as log_file:
+        print(*log_file.readlines())
