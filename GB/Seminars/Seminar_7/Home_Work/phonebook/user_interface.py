@@ -23,7 +23,7 @@ def user_request():
             print('Проверьте корректность ввода')
 
 
-def print_book(book):
-    for key in book:
+def print_book(book: dict):
+    for key in book.keys():
         print(str(key) + ' - ', end='')
         print(*book[key].values())

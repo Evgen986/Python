@@ -17,6 +17,6 @@ def start():
             lg.write_data('Конец работы программы: ' + time.strftime('%d.%m.%y %H:%M:%S') + ';')
             exit()
         book = wd.work_db(num, book)
+        print()
         ui.print_book(book)
-
-
+        print()
