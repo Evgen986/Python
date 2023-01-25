@@ -31,7 +31,14 @@ def find_in_book(f_book: dict):  # Функция поиска в справоч
             print('Проверьте корректность ввода!')
     while True:
         if f_num == '1':
+
             f_choice = input('Введите код строки: ')
+
+            # while int(f_choice) not in f_book.keys():
+            #     lg.write_data('Введено некорректное значение: ' + f_choice)
+            #     print('Проверьте корректность ввода!')
+            #     f_choice = input('Введите код строки: ')
+
             lg.write_data('Пользователь ввел команду: ' + f_choice)
             if int(f_choice) in f_book.keys():
                 lg.write_data('Ключ найден;')
@@ -164,9 +171,10 @@ def work_db(command, book: dict):  # Основная функция работ�
         return book
 
     elif command == 6:  # 6. Импортировать в справочник
-        with open('for_import.csv', encoding='utf=8') as file:
+        with open('for_import.csv', encoding='utf-8') as file:
             base = [str(el).split(';') for el in file.readlines()]
         lg.write_data('Справочник импортируется из внешнего файла;')
+        print(base)
         base[0][0] = 1
         for i in range(len(base)):
             base[i][0] = int(base[i][0])
@@ -206,3 +214,5 @@ def work_db(command, book: dict):  # Основная функция работ�
 
     elif command == 8:  # 8. Показать справочник
         return book
+
+# ПРОВЕРИТЬ windows-1251\

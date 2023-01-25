@@ -39,12 +39,54 @@
 # for el in num:
 #     print(d[int(el)], end=' ')
 
-d = {
-    "CS101": "3004, Хайнс, 8:00",
-    "CS102": "4501, Альварадо, 9:00",
-    "CS103": "6755, Рич, 10:00",
-    "NT110": "1244, Берк, 11:00",
-    "CM241": "1411, Ли, 13:00"
-}
-key = input()
-print(f'{key}: {d[key]}')
+# d = {
+#     "CS101": "3004, Хайнс, 8:00",
+#     "CS102": "4501, Альварадо, 9:00",
+#     "CS103": "6755, Рич, 10:00",
+#     "NT110": "1244, Берк, 11:00",
+#     "CM241": "1411, Ли, 13:00"
+# }
+# key = input()
+# print(f'{key}: {d[key]}')
+
+# text = input().split()
+# my_dict = {}
+# new_list = list()
+# for el in text:
+#     if el not in my_dict.keys():
+#         my_dict[el] = 0
+#         new_list.append(el)
+#     else:
+#         my_dict[el] += 1
+#         new_list.append(el + '_' + str(my_dict[el]))
+# print(*new_list)
+
+# book = {el.split() for el in input().split(':') for _ in range(int(input()))}
+# 5
+# Змея: язык программирования Python
+# Баг: от англ. bug — жучок, клоп, ошибка в программе
+# Конфа: конференция
+# Костыль: код, который нужен, чтобы исправить несовершенство ранее написанного кода
+# Бета: бета-версия, приложение на стадии публичного тестирования
+# 3
+# Змея
+# Жаба
+# костыль
+# book = {}
+# for i in range(int(input())):
+#     text = input().lower().split(':')
+#     book[text[0].lower()] = text[1].lstrip()
+# for _ in range(int(input())):
+#     print(book.get(input().lower(), 'Не найдено'))
+
+book = {k: el for _ in range(int(input())) for k, el in [input().split(' ', 1)]}
+
+# if text in book.keys():
+#     print(book.get(text))
+# else:
+for _ in range(int(input())):
+    for key in book.keys():
+        text = input()
+        if text in book[key]:
+            print(key)
+print(book)
