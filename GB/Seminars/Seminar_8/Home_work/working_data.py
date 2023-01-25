@@ -1,4 +1,4 @@
-def find_department(department_base):
+def find_department(department_base):  # Поиск отдела в базе отделов
     print('База отделов:')
     for key in department_base:
         print(key + ' - ', end='')
@@ -11,7 +11,7 @@ def find_department(department_base):
     return find_key
 
 
-def find_worker(workers_base):
+def find_worker(workers_base):  # Поиск сотрудника в базе сотрудников
     print('База сотрудников:')
     for key in workers_base:
         print(key + ' - ', end='')
@@ -37,7 +37,7 @@ def del_department(workers_base: dict, department_base):  # Удаление о�
 
 
 def del_worker(base_workers, base_department):
-    edit_key = find_worker(base_workers)  # Функция поиска сотрудника в базе
+    edit_key = find_worker(base_workers)  # Вызов функции поиска сотрудника в базе
     for key in base_department:
         if edit_key in base_department[key][2]:
             # Удаляем сотрудника из базы отделов
@@ -50,7 +50,7 @@ def del_worker(base_workers, base_department):
 
 
 def edit_department(department_base):  # Редактирование наименования отдела
-    edit_key = find_department(department_base)  # Функция поиска отдела
+    edit_key = find_department(department_base)  # Вызов функции поиска отдела
     edit_name = input('Введите новое название отдела: ').strip().capitalize()
     department_base[edit_key][0] = edit_name
     print('Отдел переименован.\n')
@@ -58,7 +58,7 @@ def edit_department(department_base):  # Редактирование наиме
 
 
 def edit_worker(base_workers, base_department):  # Редактирование сотрудников и перевод в другой отдел
-    edit_key = find_worker(base_workers)  # Функция поиска сотрудника в базе
+    edit_key = find_worker(base_workers)
     surname = input('Введите фамилию сотрудника: ').strip().capitalize()
     name = input('Введите имя сотрудника: ').strip().capitalize()
     patronymic = input('Введите отчество сотрудника: ').strip().capitalize()
@@ -117,8 +117,8 @@ def add_worker(base_workers: dict, base_department: dict):  # Функция д�
         department = input('Введите ключ отдела: ').strip().lower()
 
     if department == 'n':  # Если пользователь решил создать новый отдел
-        base_department = add_department(base_department)
-        department = str(len(base_department))
+        base_department = add_department(base_department)  # Создаем новый отдел, через вызов функции создания
+        department = str(len(base_department))  # Получаем ключ созданного отдела
 
     # Заносим нового сотрудника в базу сотрудников
     base_workers[str(len(base_workers) + 1)] = [surname, name, patronymic, telephone, address, position, department]
