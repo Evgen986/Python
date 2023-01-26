@@ -1,3 +1,5 @@
+import logger as lg
+
 
 def user_choose():
     choose = input('Команды для работы со справочником:\n'
@@ -14,4 +16,5 @@ def user_choose():
     while choose not in ('1', '2', '3', '4', '5', '6', '7', '8', '9'):  # Проверка на корректность ввода
         print('Не корректный ввод!')
         choose = input('Введите цифру: ')
+    lg.write_log('От пользователя получена команда: ' + choose + ';')
     return choose
