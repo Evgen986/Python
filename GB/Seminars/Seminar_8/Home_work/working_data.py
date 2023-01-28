@@ -112,7 +112,8 @@ def add_worker(base_workers: dict, base_department: dict):  # Функция д�
         print(f'{key} - {base_department[key][0]}')
     department = input('Введите ключ отдела: ').strip().lower()
 
-    while department not in [el for el in base_department.keys()] + ['n']:  # Проверка на корректность ввода
+    temp = [el for el in base_department.keys()] + ['n']
+    while department not in temp:  # Проверка на корректность ввода
         print('Не корректный ввод!')
         department = input('Введите ключ отдела: ').strip().lower()
 
@@ -128,3 +129,5 @@ def add_worker(base_workers: dict, base_department: dict):  # Функция д�
     base_department[department][1] = str(len(base_department[department][2]))
     print('Сотрудник внесен в базу.\n')
     return base_workers, base_department
+
+

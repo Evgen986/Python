@@ -34,7 +34,7 @@ def program_start():
     shutil.copy('data_department.txt', 'data_department_backup.txt')  # Резервная копия базы отделов
     lg.write_log('Резервная копия базы отделов сохранена в data_department_backup.txt')
 
-    while True:  # Цикл пока не будет задействован elif == "9"
+    while user_choice != '9':  # Цикл пока не будет задействован elif == "9"
 
         if user_choice == '1':  # Добавить сотрудника
             data_workers, data_departments = wd.add_worker(data_workers, data_departments)
@@ -109,19 +109,18 @@ def program_start():
                 print('Экспорт по 2 правилу завершен.\n')
                 lg.write_log('Экспорт по 2 правилу выполнен, данные сохранены в файл export_2.csv')
 
-        elif user_choice == '9':  # Выход
-            # Сохраняем базу СОТРУДНИКОВ в файл
-            with open('data_workes.txt', 'w', encoding='utf=8') as file_w:
-                for key in data_workers:
-                    file_w.write(str(key) + '*' + '*'.join(data_workers[key]) + '\n')
-            lg.write_log('База сотрудников сохранена в файл data_workes.txt')
-            # Сохраняем базу ОТДЕЛОВ в файл
-            with open('data_department.txt', 'w', encoding='utf=8') as file_d:
-                for key in data_departments:
-                    file_d.write(str(key) + '*' + '*'.join(el if type(el) != list else '%'.join(el)
-                                                           for el in data_departments[key]) + '\n')
-            lg.write_log('База отделов сохранена в файл data_department.txt')
-            print('Работа программы завершена')
-            lg.write_log('Завершение работы программы: ' + time.strftime('%d.%m.%y %H:%M:%S') + ';')
-            exit()
         user_choice = ui.user_choose()
+
+    # Сохраняем базу СОТРУДНИКОВ в файл
+    with open('data_workes.txt', 'w', encoding='utf=8') as file_w:
+        for key in data_workers:
+            file_w.write(str(key) + '*' + '*'.join(data_workers[key]) + '\n')
+    lg.write_log('База сотрудников сохранена в файл data_workes.txt')
+    # Сохраняем базу ОТДЕЛОВ в файл
+    with open('data_department.txt', 'w', encoding='utf=8') as file_d:
+        for key in data_departments:
+            file_d.write(str(key) + '*' + '*'.join(el if type(el) != list else '%'.join(el)
+                                                   for el in data_departments[key]) + '\n')
+    lg.write_log('База отделов сохранена в файл data_department.txt')
+    print('Работа программы завершена')
+    lg.write_log('Завершение работы программы: ' + time.strftime('%d.%m.%y %H:%M:%S') + ';')
