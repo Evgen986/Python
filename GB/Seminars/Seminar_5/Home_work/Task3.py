@@ -3,6 +3,7 @@ import Task2
 import random
 
 
+
 def print_dic(dicti):  # Печать матрицы
     print(' ' + dicti['1'], dicti['2'], dicti['3'], sep=' | ')
     print('-' * 11)
