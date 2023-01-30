@@ -10,7 +10,8 @@ dic = {}
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id, f'Привет {message.from_user.first_name}!')
-    bot.send_message(message.chat.id, 'Я еще только учусь и знаю несколько слов:\nпоиграем\nпосчитаем\nпомощь')
+    bot.send_message(message.chat.id, 'Я еще только учусь и знаю несколько слов:\n'
+                                      'поиграем\nпосчитаем\nсправочник\nпомощь')
     bot.send_message(message.chat.id, f'Чем займемся?')
 
 
@@ -28,14 +29,16 @@ def get_user_text(message):  # Выбор функций бота
     elif mes.text.lower() == 'посчитаем':
         bot.send_message(chat_id, 'Хорошо! Вводи пример!')
         bot.register_next_step_handler(mes, count_example)
-    elif mes.text.lower() == 'справочник':
-        bot.send_message(chat_id, 'Поработаем с телефонным справочником!\n'
-                                  '1. Добавить контакт\n'
-                                  '2. Найти контакт\n'
-                                  '3. Редактировать контакт\n'
-                                  '4. Удалить контакт\n'
-                                  '5. Импортировать справочник\n'
-                                  '6. Экспортировать справочник')
+    # elif mes.text.lower() == 'справочник':
+    #     bot.send_message(chat_id, 'Поработаем с телефонным справочником!\n'
+    #                               '1. Добавить контакт\n'
+    #                               '2. Найти контакт\n'
+    #                               '3. Редактировать контакт\n'
+    #                               '4. Удалить контакт\n'
+    #                               '5. Импортировать справочник\n'
+    #                               '6. Экспортировать справочник\n'
+    #                               'Что будем делать?(введи цифру)')
+    #     bot.register_next_step_handler(mes, work_base)
     #     keybord = telebot.types.ReplyKeyboardMarkup()
     #     button_1 = telebot.types.KeyboardButton(text='Добавить контакт')
     #     keybord.add(button_1)
