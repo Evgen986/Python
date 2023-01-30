@@ -11,7 +11,6 @@ book = {1: {'surname': 'Иванов', 'name': 'Иван', 'patronymic': 'Ива
 def find_in_book(text):  # Функция поиска в справочнике возвращает найденные контакты строкой
     global book
     f_choice = text
-    lg.write_data('Пользователь ввел команду: ' + f_choice)
     choice_list = list()
     for key in book:
         if f_choice in book[key].values():
@@ -19,7 +18,6 @@ def find_in_book(text):  # Функция поиска в справочнике
     if len(choice_list) == 0:
         return False
     else:
-        # lg.write_data('Возвращается ключ: ' + str(choice_list[0]))
         return '\n'.join(choice_list)
 
 
@@ -27,7 +25,7 @@ def add_contact(surname, name, patronymic, email_address, telephone):  # 1. Вв
     global book
     book[len(book) + 1] = dict(zip(['surname', 'name', 'patronymic', 'email', 'telephone'],
                                    [surname, name, patronymic, email_address, telephone]))
-    # lg.write_data('В справочник внесена новая запись;')
+    lg.write_data('В справочник внесена новая запись;')
     return True
 
 

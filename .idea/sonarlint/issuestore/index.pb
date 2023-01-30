@@ -21,7 +21,11 @@ O
 test_bot/calc/model_racional.py,f\e\fe65926ca500ebacf7ebcebdbcd7751edbb9d3de
 K
 test_bot/calc/controller.py,b\e\beb5943f9421ebb6b5ec831f989b58945ed4fc98
-_
-/GB/Seminars/Seminar_9/Home_work/log_generate.py,7\f\7fb04b7a47a3d1b7dce54c8ef1bc1621dfaa5e1b
 P
  test_bot/calc/user_interfeice.py,0\e\0e1b4f61bd2475c785af45253a4c2cac1a0008fe
+a
+1GB/Seminars/Seminar_8/Home_work/user_interface.py,8\d\8dd00c1e880a886afbf9ed37ea08f62ef989dc7b
+]
+-GB/Seminars/Seminar_8/Home_work/controller.py,d\d\dd1d5f931f8992d5628ac571fc5f5bae49011cf0
+r
+BGB/Seminars/Seminar_7/Home_Work/phonebook/working_with_datebase.py,0\9\09619d9c0a8393df8f15f60b6b206b6d8adb0293

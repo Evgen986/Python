@@ -1,0 +1,8 @@
+
+•python:S1192"xDefine a constant instead of duplicating this literal 'ĞŸÑ€Ğ¾Ğ²ĞµÑ€ÑŒÑ‚Ğµ ĞºĞ¾Ñ€Ñ€ĞµĞºÑ‚Ğ½Ğ¾ÑÑ‚ÑŒ Ğ²Ğ²Ğ¾Ğ´Ğ°!' 4 times.(Ù–êúÿÿÿÿ
+python:S1192"sDefine a constant instead of duplicating this literal 'ĞŸĞ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ÑŒ Ğ²Ğ²ĞµĞ» ĞºĞ¾Ğ¼Ğ°Ğ½Ğ´Ñƒ: ' 3 times.(¤¢¶¾şÿÿÿÿ
+7python:S3626;"Remove this redundant continue.(À–¬ˆ
+qpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.(À²â¥ûÿÿÿÿ
+;python:S125%"Remove this commented out code.(ÄĞŞõøÿÿÿÿ
+lpython:S3776L"TRefactor this function to reduce its Cognitive Complexity from 82 to the 15 allowed.(ÒÇì°
+dpython:S5799n"GMerge these implicitly concatenated strings; or did you forget a comma?(²¨Ô­ÿÿÿÿÿ

@@ -43,7 +43,6 @@ def calc(my_list):  # Функция решения арифметических
                 result = my_list.pop(i + 1) + my_list.pop(i - 1)
                 my_list[i - 1] = result
                 break
-
     return my_list
 
 
