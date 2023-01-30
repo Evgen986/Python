@@ -28,8 +28,21 @@ def get_user_text(message):  # Выбор функций бота
     elif mes.text.lower() == 'посчитаем':
         bot.send_message(chat_id, 'Хорошо! Вводи пример!')
         bot.register_next_step_handler(mes, count_example)
-    else:
-        bot.send_message(message.chat.id, 'Я тебя не понимаю! Воспользуйся командой "/help"!')
+    elif mes.text.lower() == 'справочник':
+        bot.send_message(chat_id, 'Поработаем с телефонным справочником!\n'
+                                  '1. Добавить контакт\n'
+                                  '2. Найти контакт\n'
+                                  '3. Редактировать контакт\n'
+                                  '4. Удалить контакт\n'
+                                  '5. Импортировать справочник\n'
+                                  '6. Экспортировать справочник')
+    #     keybord = telebot.types.ReplyKeyboardMarkup()
+    #     button_1 = telebot.types.KeyboardButton(text='Добавить контакт')
+    #     keybord.add(button_1)
+    #     message.answer('Что будем делать?', replay_markup=keybord)
+    #
+    # else:
+    #     bot.send_message(message.chat.id, 'Я тебя не понимаю! Воспользуйся командой "/help"!')
 
 
 def start_game(message):  # Функция определения, кто будет ходить первым
@@ -79,6 +92,8 @@ def count_example(message):  # Функиця решения примера
     example, example_list = mr.get_nums(message.text)
     result = mr.get_result(example_list)
     bot.send_message(chat_id, f'{example} = {result}')
+
+
 
 
 print('Сервер запущен')
